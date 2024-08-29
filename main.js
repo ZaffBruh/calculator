@@ -1,35 +1,27 @@
+const buttons = document.querySelectorAll(".btn");
+const func = document.querySelector(".func");
+const input1 = document.getElementById("input1");
+const input2 = document.getElementById("input2");
+const output = document.getElementById("output");
 const form = document.querySelector("form")
-const button = document.querySelectorAll("button")
-const func = document.querySelector(".func")
 
-form.addEventListener("submit", function(e){
-    e.preventDefault()
+form.addEventListener("submit", function(f){
+    f.preventDefault()
 
-    const in1 = document.querySelector("#input1").value
-    const in2 = document.querySelector("#input2").value
-    const output = document.querySelector("#output")
-
-    if(e.target.id === "x"){
-        func.innerHTML = "x"
-    }
-    if(e.target.id === "/"){
-        func.innerHTML = "/"
-    }
-})
-
-button.forEach(function (f){
-    f.addEventListener("click", function(e){
-        if(e.target.id === "x"){
-            func.innerHTML = "x"
-        }
-        if(e.target.id === "/"){
-            func.innerHTML = "/"
-        }
-        if(e.target.id === "+"){
-            func.innerHTML = "+"
-        }
-        if(e.target.id === "-"){
-            func.innerHTML = "-"
-        }
+    buttons.forEach(function (b){
+        b.addEventListener("click", function(e){
+            if(e.target.id === "*"){
+                func.innerHTML = "*"
+            }
+            else if(e.target.id === "/"){
+                func.innerHTML = "/"
+            }
+            else if(e.target.id === "+"){
+                func.innerHTML = "+"
+            }
+            else if(e.target.id === "-"){
+                func.innerHTML = "-"
+            }
     })
+  })
 })
