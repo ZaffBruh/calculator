@@ -1,27 +1,39 @@
 const buttons = document.querySelectorAll(".btn");
 const func = document.querySelector(".func");
-const input1 = document.getElementById("input1");
-const input2 = document.getElementById("input2");
-const output = document.getElementById("output");
-const form = document.querySelector("form")
+const resultButton = document.getElementById("="); // Renamed for clarity
+const form = document.querySelector("form");
 
-form.addEventListener("submit", function(f){
-    f.preventDefault()
+let operation = ""; // Store the selected operation
 
-    buttons.forEach(function (b){
-        b.addEventListener("click", function(e){
-            if(e.target.id === "*"){
-                func.innerHTML = "*"
-            }
-            else if(e.target.id === "/"){
-                func.innerHTML = "/"
-            }
-            else if(e.target.id === "+"){
-                func.innerHTML = "+"
-            }
-            else if(e.target.id === "-"){
-                func.innerHTML = "-"
-            }
-    })
-  })
-})
+// Adding event listeners for the operator buttons
+buttons.forEach(function (b) {
+    b.addEventListener("click", function (e) {
+        if (e.target.id !== "=") { // Exclude the "=" button
+            operation = e.target.id;
+            func.innerHTML = operation;
+        }
+    });
+});
+
+// Adding event listener for the form submission
+form.addEventListener("submit", function (f) {
+    f.preventDefault(); // Prevent form from submitting traditionally
+
+    const input1 = parseFloat(document.getElementById("input1").value);
+    const input2 = parseFloat(document.getElementById("input2").value);
+    const output = document.getElementById("output");
+
+    let res;
+
+    if (operation === "*") {
+        res = input1 * input2;
+    } else if (operation === "/") {
+        res = input1 / input2;
+    } else if (operation === "+") {
+        res = input1 + input2;
+    } else if (operation === "-") {
+        res = input1 - input2;
+    }
+
+    output.innerHTML = res;
+});
