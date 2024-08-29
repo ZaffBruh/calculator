@@ -12,25 +12,24 @@
         <h1>Calculator</h1>
     </div>
     <form>
-    <div class="box">
+    <div class="box" id="box">
         <label for="in">Enter number:</label>
-        <input type="number">
-        <span class="func">x</span>
-        <input type="number">
+        <input type="number" id="input1">
+        <span class="func"></span>
+        <input type="number" id="input2">
     </div>
     <div class="calc">
-        <button class="btn">x</button>
-        <button class="btn">/</button>
-        <button class="btn">+</button>
-        <button class="btn">-</button>
-        <button class="btn">=</button>
+        <button class="btn" id="x">x</button>
+        <button class="btn" id="/">/</button>
+        <button class="btn" id="+">+</button>
+        <button class="btn" id="-">-</button>
+        <button class="btn" id="=">=</button>
     </div>
     <div class="output">
-        <label for="out">Result :</label>
-        <output class="out"></output>
+        <label for="out">Result:</label>
+        <output class="out" id="output"></output>
     </div>
     </form>
-  
     <script src="main.js"></script>
 </body>
 </html>
