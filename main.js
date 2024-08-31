@@ -35,5 +35,5 @@ form.addEventListener("submit", function (f) {
         res = input1 - input2;
     }
 
-    output.innerHTML = res;
+    output.innerHTML = res.toFixed(2);
 });
